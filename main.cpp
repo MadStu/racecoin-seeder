@@ -356,14 +356,14 @@ extern "C" void* ThreadStats(void*) {
   } while(1);
 }
 
-static const string mainnet_seeds[] = {"static-dnsseed.darkcoin.io", "static-dnsseed.dashdot.io", ""};
-static const string testnet_seeds[] = {"static-testnet-seed.darkcoin.io", "static-testnet-seed.dashdot.io", ""};
+static const string mainnet_seeds[] = {"emea-seed1.racecrypto.com", "apac-seed1.racecrypto.com", "nafta-seed1.racecrypto.com", ""};
+static const string testnet_seeds[] = {"test-emea-seed1.racecrypto.com", "test-apac-seed1.racecrypto.com", "test-nafta-seed1.racecrypto.com", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
-  if (!fTestNet){
-    db.Add(CService("darkcoin.io", 9999), true);
-  }
+//  if (!fTestNet){
+//    db.Add(CService("emea.racecrypto.com", 8800), true);
+//  }
   do {
     for (int i=0; seeds[i] != ""; i++) {
       vector<CNetAddr> ips;
@@ -405,10 +405,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xce;
-      pchMessageStart[1] = 0xe2;
-      pchMessageStart[2] = 0xca;
-      pchMessageStart[3] = 0xff;
+      pchMessageStart[0] = 0xdb;
+      pchMessageStart[1] = 0xfd;
+      pchMessageStart[2] = 0x19;
+      pchMessageStart[3] = 0x66;
       seeds = testnet_seeds;
       fTestNet = true;
   }
