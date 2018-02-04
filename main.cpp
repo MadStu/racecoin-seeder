@@ -356,8 +356,8 @@ extern "C" void* ThreadStats(void*) {
   } while(1);
 }
 
-static const string mainnet_seeds[] = {"emea.racecrypto.com", "apac.racecrypto.com", "nafta.racecrypto.com", ""};
-static const string testnet_seeds[] = {"test-emea.racecrypto.com", "test-apac.racecrypto.com", "test-nafta.racecrypto.com", ""};
+static const string mainnet_seeds[] = {"emea-seed1.racecrypto.com", "apac-seed1.racecrypto.com", "nafta-seed1.racecrypto.com", ""};
+static const string testnet_seeds[] = {"test-emea-seed1.racecrypto.com", "test-apac-seed1.racecrypto.com", "test-nafta-seed1.racecrypto.com", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
